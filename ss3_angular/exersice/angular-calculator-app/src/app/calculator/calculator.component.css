@@ -1,0 +1,7 @@
+.num-buttons {
+  display: flex;
+  gap: 5px;
+}
+.num-buttons div {
+  margin-bottom: 4px;
+}
