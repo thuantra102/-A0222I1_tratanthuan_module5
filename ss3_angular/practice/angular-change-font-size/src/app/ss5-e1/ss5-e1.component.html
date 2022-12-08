@@ -1,0 +1,9 @@
+<h2>Rating Bar</h2>
+
+
+
+<div class="star" id="starPrint">
+  <div  *ngFor="let item of chosenStar" class="chosenStar" (click)="changeNumber(item)" >{{item}}</div>
+  <div *ngFor="let item1 of restStar" class="restStar" (click)="changeNumber(item1)" >{{item1}}</div>
+</div>
+<app-rating-child [star]="chosenNumber" ></app-rating-child>

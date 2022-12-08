@@ -1,0 +1,9 @@
+<h2>Parent Component</h2>
+<h2>Count: {{childtest2Component.count}}</h2>
+<!--<app-childtest2 (countChanged) = "countChangeHandle($event)"></app-childtest2>-->
+<button (click)="childtest2Component.increase()"></button>
+<button (click)="childtest2Component.decrease()"></button>
+
+
+<app-childtest2 #childtest2Component></app-childtest2>
+
