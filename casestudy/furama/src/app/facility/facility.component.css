@@ -1,0 +1,6 @@
+.facility-row {
+  align-items: center;
+  /*gap: 100px;*/
+  justify-content: space-around;
+  margin-top: 30px;
+}
