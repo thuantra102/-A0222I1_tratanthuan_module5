@@ -1,0 +1,39 @@
+<form [formGroup]="accountInfoForm" (ngSubmit)="submitAccount()">
+  <p>Email</p>
+  <input formControlName="email" name="email" type="text">
+
+  <p style="color: red"
+     *ngIf="accountInfoForm.controls.email.hasError('required') && accountInfoForm.controls.email.touched">Nhap
+    Email</p>
+  <p>Password</p>
+  <input formControlName="password" name="password" type="password">
+  <p style="color: red"
+     *ngIf="accountInfoForm.controls.password.hasError('minlength') && accountInfoForm.controls.password.touched">
+    Password trên 8 kí tự</p>
+  <p style="color: red"
+     *ngIf="accountInfoForm.controls.password.hasError('required') && accountInfoForm.controls.password.touched">Nhap
+    Password</p>
+
+
+  <p>Country</p>
+  <select formControlName="country" name="country" [(ngModel)]="selected"  >
+    <option value="-1" >Select Country</option>
+    <option value="0">Viet Nam</option>
+    <option value="1">US</option>
+    <option value="2">Korean</option>
+    <option value="3">Japan</option>
+  </select>
+  <p style="color: red" *ngIf="accountInfoForm.controls.country.hasError('min') ">Chon quoc gia</p>
+
+  <p>Age</p>
+  <input type=number formControlName="age">
+  <p>Gender</p>
+  <input type="radio" name="gender" formControlName="gender">
+  <label>Male</label>
+  <input type="radio" name="gender" formControlName="gender">
+  <label>Female</label>
+  <p>Phone</p>
+  <input type="text" formControlName="phone" name="phone">
+  <br>
+  <button type="submit">Submit</button>
+</form>

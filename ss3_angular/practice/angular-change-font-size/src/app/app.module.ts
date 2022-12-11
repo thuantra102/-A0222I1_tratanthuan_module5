@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontSizeEditorComponent } from './font-size-editor/font-size-editor.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PetComponent } from './pet/pet.component';
 import { ArticleComponent } from './article/article.component';
 import { LikeComponent } from './like/like.component';
@@ -21,6 +21,11 @@ import { Ss5Test2Component } from './ss5-test2/ss5-test2.component';
 import { Childtest2Component } from './ss5-test2/childtest2/childtest2.component';
 import { RatingChildComponent } from './ss5-e1/rating-child/rating-child.component';
 import { Ss5E2Component } from './ss5-e2/ss5-e2.component';
+import { Ss6P1Component } from './ss6-p1/ss6-p1.component';
+import { TodoComponent } from './ss6-p1/todo/todo.component';
+
+import { Ss6E1Component } from './ss6-e1/ss6-e1.component';
+import { CreateAccountTestComponent } from './create-account-test/create-account-test.component';
 
 @NgModule({
   declarations: [
@@ -41,13 +46,18 @@ import { Ss5E2Component } from './ss5-e2/ss5-e2.component';
     Ss5Test2Component,
     Childtest2Component,
     RatingChildComponent,
-    Ss5E2Component
+    Ss5E2Component,
+    Ss6P1Component,
+    TodoComponent,
+    Ss6E1Component,
+    CreateAccountTestComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
