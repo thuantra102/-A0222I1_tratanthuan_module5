@@ -26,6 +26,13 @@ import { TodoComponent } from './ss6-p1/todo/todo.component';
 
 import { Ss6E1Component } from './ss6-e1/ss6-e1.component';
 import { CreateAccountTestComponent } from './create-account-test/create-account-test.component';
+import { Ss7P1Component } from './ss7-p1/ss7-p1.component';
+import { Ss7P2Component } from './ss7-p2/ss7-p2.component';
+import { YoutubePlayerComponent } from './ss7-p2/youtube-player/youtube-player.component';
+import { Ss7P3Component } from './ss7-p3/ss7-p3.component';
+import { ProductCreateComponent } from './ss7-p3/product/product-create/product-create.component';
+import { Ss7E1Component } from './ss7-e1/ss7-e1.component';
+import { TranslateComponent } from './ss7-e1/dictionaryService/translate/translate.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +57,14 @@ import { CreateAccountTestComponent } from './create-account-test/create-account
     Ss6P1Component,
     TodoComponent,
     Ss6E1Component,
-    CreateAccountTestComponent
+    CreateAccountTestComponent,
+    Ss7P1Component,
+    Ss7P2Component,
+    YoutubePlayerComponent,
+    Ss7P3Component,
+    ProductCreateComponent,
+    Ss7E1Component,
+    TranslateComponent
   ],
     imports: [
         BrowserModule,

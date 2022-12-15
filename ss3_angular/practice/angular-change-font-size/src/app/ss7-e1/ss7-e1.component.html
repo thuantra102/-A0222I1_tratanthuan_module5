@@ -1,0 +1,13 @@
+<p>List Word</p>
+<table border="1">
+ <tr>
+   <td>Word</td>
+   <td>Definition</td>
+ </tr>
+  <tr *ngFor="let d of dictionary_word, index as i">
+    <td >{{i + 1}}</td>
+    <td ><a [routerLink]="['/dictionary', d.word]">{{d.word}}</a></td>
+    <td>{{d.mean}}</td>
+  </tr>
+</table>
+<router-outlet></router-outlet>
