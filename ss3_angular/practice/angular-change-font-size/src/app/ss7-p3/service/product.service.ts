@@ -40,4 +40,8 @@ export class ProductService {
   saveProduct(product) {
     this.products.push(product);
   }
+  edit(productEdit) {
+    const index = this.products.findIndex((obj => obj.id === productEdit.id));
+    this.products[index] = productEdit;
+  }
 }

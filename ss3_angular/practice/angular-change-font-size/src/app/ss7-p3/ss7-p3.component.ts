@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProductService} from './service/product.service';
 import {Product} from './module/product';
 
@@ -8,9 +8,11 @@ import {Product} from './module/product';
   styleUrls: ['./ss7-p3.component.css']
 })
 export class Ss7P3Component implements OnInit {
-products: Product[];
+  products: Product[];
+  productEdit: Product;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {
+  }
 
   ngOnInit(): void {
     this.getAll();
@@ -20,4 +22,8 @@ products: Product[];
     this.products = this.productService.getAll();
   }
 
+  saveProduct(product: Product) {
+    this.productEdit = product;
+    // console.log(this.productEdit);
+  }
 }

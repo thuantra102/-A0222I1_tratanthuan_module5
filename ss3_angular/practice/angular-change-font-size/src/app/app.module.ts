@@ -33,6 +33,7 @@ import { Ss7P3Component } from './ss7-p3/ss7-p3.component';
 import { ProductCreateComponent } from './ss7-p3/product/product-create/product-create.component';
 import { Ss7E1Component } from './ss7-e1/ss7-e1.component';
 import { TranslateComponent } from './ss7-e1/dictionaryService/translate/translate.component';
+import { ProductEditComponent } from './ss7-p3/product/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { TranslateComponent } from './ss7-e1/dictionaryService/translate/transla
     Ss7P3Component,
     ProductCreateComponent,
     Ss7E1Component,
-    TranslateComponent
+    TranslateComponent,
+    ProductEditComponent
   ],
     imports: [
         BrowserModule,

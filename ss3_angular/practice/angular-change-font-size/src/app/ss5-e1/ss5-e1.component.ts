@@ -27,12 +27,12 @@ export class Ss5E1Component implements OnInit {
 
   }
   printStar() {
-    for (let i = 1; i <= this.chosenNumber; i++) {
-      this.chosenStar.push(i);
-    }
-    for (let j = this.chosenNumber + 1; j <= 10; j ++) {
-      this.restStar.push(j);
-    }
+    // for (let i = 1; i <= this.chosenNumber; i++) {
+    //   this.chosenStar.push(i);
+    // }
+    // for (let j = this.chosenNumber + 1; j <= 10; j ++) {
+    //   this.restStar.push(j);
+    // }
     console.log(this.chosenStar);
     console.log(this.restStar);
 
