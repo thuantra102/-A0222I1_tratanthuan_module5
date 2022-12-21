@@ -1,0 +1,107 @@
+{
+  "contracts": [
+    {
+      "id": 1,
+      "name": "Thuan Tra",
+      "customer": {
+        "id": "KH-1222",
+        "name": "Tra Tan Luan",
+        "phoneNumber": "0905908000",
+        "identifyNumber": "123131344",
+        "email": "luantra@gmail.com",
+        "dateOfBirth": "2020-12-12"
+      },
+      "facility": {
+        "id": 5,
+        "name": "hellll",
+        "cost": 1912,
+        "description": "old",
+        "poolArea": 3,
+        "status": true,
+        "floor": 9
+      },
+      "dateStart": "2020-08-11",
+      "dateFinish": "2020-08-11",
+      "deposit": 12312
+    },
+    {
+      "id": 2,
+      "name": "Thuan Tra Tan",
+      "customer": {
+        "id": "KH-121231",
+        "name": "Do Le Luan",
+        "phoneNumber": "0905908000",
+        "identifyNumber": "123131344",
+        "email": "luantra@gmail.com",
+        "dateOfBirth": "2020-12-12"
+      },
+      "facility": {
+        "id": 5,
+        "name": "LUANLLL",
+        "cost": 1912,
+        "description": "old",
+        "poolArea": 3,
+        "status": true,
+        "floor": 9
+      },
+      "dateStart": "2020-08-11",
+      "dateFinish": "2020-08-11",
+      "deposit": 12312
+    }
+  ],
+  "customers": [
+    {
+      "id": "KH-1233",
+      "name": "Tra Tan Thuan",
+      "phoneNumber": "0905908695",
+      "identifyNumber": "123131231",
+      "email": "thuantra@gmail.com",
+      "dateOfBirth": "2022-03-25"
+    },
+    {
+      "id": "KH-1234",
+      "name": "Tra Tan Huong",
+      "phoneNumber": "0905908695",
+      "identifyNumber": "123131231",
+      "email": "thuantra@gmail.com",
+      "dateOfBirth": "2022-03-25"
+    },
+    {
+      "id": "KH-1235",
+      "name": "Tra Tan Long",
+      "phoneNumber": "0905908695",
+      "identifyNumber": "123131231",
+      "email": "thuantra@gmail.com",
+      "dateOfBirth": "2022-03-25"
+    }
+  ],
+  "facilities": [
+    {
+      "id": 1,
+      "name": "bicycle",
+      "cost": 123,
+      "description": "new",
+      "poolArea": 2123,
+      "status": true,
+      "floor": 3
+    },
+    {
+      "id": 2,
+      "name": "bicycle2",
+      "cost": 123,
+      "description": "new",
+      "poolArea": 2123,
+      "status": true,
+      "floor": 3
+    },
+    {
+      "id": 3,
+      "name": "bicycle3",
+      "cost": 123,
+      "description": "new",
+      "poolArea": 2123,
+      "status": true,
+      "floor": 3
+    }
+  ]
+}

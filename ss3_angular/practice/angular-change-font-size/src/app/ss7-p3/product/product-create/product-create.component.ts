@@ -16,9 +16,12 @@ export class ProductCreateComponent implements OnInit {
     description: new FormControl(),
   });
   constructor(private productService: ProductService,
-              private activateRouter: ActivatedRoute ) { }
+              private activateRouter: ActivatedRoute ) {
+    console.log('contructor create ');
+  }
 
   ngOnInit(): void {
+    console.log('create khoi tao');
   }
   submit() {
     const product = this.productForm.value;

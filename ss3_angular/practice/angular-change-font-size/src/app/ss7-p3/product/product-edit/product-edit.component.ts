@@ -35,7 +35,7 @@ export class ProductEditComponent implements OnInit, OnChanges {
     console.log(this.product);
     console.log(this.productForm.value);
     this.service.edit(this.productForm.value);
-    this.router.navigate(['']);
+    this.router.navigate(['product/list']);
   }
   ngOnChanges(changes: SimpleChanges): void {
 

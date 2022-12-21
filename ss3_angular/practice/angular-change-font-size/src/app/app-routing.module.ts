@@ -18,7 +18,7 @@ const routes: Routes = [
     }]
   },
   {
-    path: 'product/list',
+    path: 'product',
     component: Ss7P3Component
   },
   {

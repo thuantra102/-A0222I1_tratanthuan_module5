@@ -1,0 +1,32 @@
+<app-header></app-header>
+<h2>Customer List</h2>
+<button routerLink="/facilityList/create" class="btn btn-primary"><a>ADD NEW</a></button>
+<table class="table table-dark">
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Phone</td>
+    <td>Indentify Number</td>
+    <td>Email</td>
+    <td>Date of birth</td>
+    <td>Action</td>
+  </tr>
+  <tr *ngFor="let f of customers">
+    <td>{{f.id}}</td>
+    <td>{{f.name}}</td>
+    <td>{{f.phoneNumber}}</td>
+    <td>{{f.identifyNumber}}</td>
+    <td>{{f.email}}</td>
+    <td>{{f.dateOfBirth | date: 'dd-MM-yyyy'}}</td>
+
+
+    <td>
+      <button class="btn btn-primary">Edit</button>
+      <button class="btn btn-danger">Delete</button>
+    </td>
+
+  </tr>
+
+</table>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

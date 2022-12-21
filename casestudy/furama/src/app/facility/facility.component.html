@@ -1,11 +1,13 @@
+<app-header></app-header>
 <nav class="navbar navbar-light bg-white">
   <a class="navbar-brand"></a>
-  <form class="form-inline">
-    <button class="btn btn-warning my-2 my-sm-0 m-3" type="submit">Create</button>
 
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-  </form>
+    <button class="btn btn-warning my-2 my-sm-0 m-3" >
+      <a routerLink="/facility/create">Create</a></button>
+
+<!--    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>-->
+
 </nav>
 <div  class="d-flex flex-row facility-row">
   <div class="card "  style="width: 18rem">
@@ -101,3 +103,5 @@
     </li>
   </ul>
 </nav>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

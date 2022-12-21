@@ -44,4 +44,11 @@ export class ProductService {
     const index = this.products.findIndex((obj => obj.id === productEdit.id));
     this.products[index] = productEdit;
   }
+
+  deleteProduct(id: number) {
+    this.products = this.products.filter(a => {
+       return a.id !== id;
+    });
+
+  }
 }
