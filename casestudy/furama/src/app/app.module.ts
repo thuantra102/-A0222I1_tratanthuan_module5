@@ -16,6 +16,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { ContractCreateComponent } from './Contract/contract/contract-create/contract-create.component';
 import { ReactiveFormsModule} from "@angular/forms";
 import { FormsModule} from "@angular/forms";
+import { CustomerSaveComponent } from './CustomerList/customer/customer-save/customer-save.component';
 
 
 @NgModule({
@@ -30,6 +31,8 @@ import { FormsModule} from "@angular/forms";
     CusomerListComponent,
     ContractListComponent,
     ContractCreateComponent,
+    CustomerSaveComponent,
+
 
 
   ],

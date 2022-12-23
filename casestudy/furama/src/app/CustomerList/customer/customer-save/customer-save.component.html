@@ -1,0 +1,40 @@
+<h3>Save customer</h3>
+<form [formGroup]="customerForm" (ngSubmit)="submit()" >
+  <table   class="table-primary" >
+    <tr>
+      <td>Customer ID</td>
+      <td><input  type="text" formControlName="customerId" name="customerId"></td>
+
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" formControlName="name" name="name"></td>
+    </tr>
+    <tr>
+      <td>Phone Number</td>
+      <td><input type="text" formControlName="phoneNumber" name="phoneNumber"></td>
+
+    <tr>
+      <td>Identify Number</td>
+      <td><input type="text"  formControlName="identifyNumber" name="identifyNumber"></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text"  formControlName="email"  name="name"></td>
+    </tr>
+    <tr>
+      <td>Date Of Birth</td>
+      <td><input type="date"  formControlName="dateOfBirth"  name="name"></td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td><button class="btn btn-primary" type="submit">Save</button></td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td><button class="btn btn-danger">Cancle</button></td>
+    </tr>
+  </table>
+</form>

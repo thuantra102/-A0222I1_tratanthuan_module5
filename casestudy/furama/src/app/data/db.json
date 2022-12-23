@@ -51,40 +51,16 @@
   ],
   "customers": [
     {
-      "id": "KH-1233",
-      "name": "Tra Tan Thuan",
+      "id": 3,
+      "customerCode": "KH-1233",
+      "name": "SamSung J2",
       "phoneNumber": "0905908695",
-      "identifyNumber": "123131231",
-      "email": "thuantra@gmail.com",
-      "dateOfBirth": "2022-03-25"
-    },
-    {
-      "id": "KH-1234",
-      "name": "Tra Tan Huong",
-      "phoneNumber": "0905908695",
-      "identifyNumber": "123131231",
-      "email": "thuantra@gmail.com",
-      "dateOfBirth": "2022-03-25"
-    },
-    {
-      "id": "KH-1235",
-      "name": "Tra Tan Long",
-      "phoneNumber": "0905908695",
-      "identifyNumber": "123131231",
-      "email": "thuantra@gmail.com",
-      "dateOfBirth": "2022-03-25"
+      "identifyNumber": "1234567891",
+      "email": "a@gmail.com",
+      "dateOfBirth": "2022-12-20"
     }
   ],
   "facilities": [
-    {
-      "id": 1,
-      "name": "bicycle",
-      "cost": 123,
-      "description": "new",
-      "poolArea": 2123,
-      "status": true,
-      "floor": 3
-    },
     {
       "id": 2,
       "name": "bicycle2",
