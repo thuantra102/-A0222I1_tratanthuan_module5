@@ -1,6 +1,49 @@
-<app-header></app-header>
-<form>
 
-  <p>Name</p>
+<form [formGroup]="facilityForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" formControlName="name" name="name"></td>
+      <p *ngIf="facilityForm.controls.name.hasError('required') && facilityForm.controls.name.touched" style="color: red">Name required</p>
+      <p *ngIf="facilityForm.controls.name.hasError('pattern') && facilityForm.controls.name.touched" style="color: red">Not include number</p>
+    </tr>
+    <tr>
+      <td>cost</td>
+      <td><input type="number" formControlName="cost" name="cost"></td>
+      <p *ngIf="facilityForm.controls.cost.hasError('min') && facilityForm.controls.cost.touched" style="color: red">> 0</p>
+      <p *ngIf="facilityForm.controls.cost.hasError('required') && facilityForm.controls.cost.touched" style="color: red">Cost required</p>
+
+    </tr>
+    <tr>
+      <td>description</td>
+      <td><input type="text" formControlName="description" name="description"></td>
+      <p *ngIf="facilityForm.controls.description.hasError('minlength') && facilityForm.controls.description.touched" style="color: red">Min length 12</p>
+
+    </tr>
+    <tr>
+      <td>poolArea</td>
+      <td><input type="number" formControlName="poolArea" name="poolArea"></td>
+      <p *ngIf="facilityForm.controls.poolArea.hasError('min') && facilityForm.controls.poolArea.touched" style="color: red">> 0</p>
+      <p *ngIf="facilityForm.controls.poolArea.hasError('required') && facilityForm.controls.poolArea.touched" style="color: red">Cost required</p>
+
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>
+        <select formControlName="status">
+          <option value="true">new</option>
+          <option value="false">old</option>
+        </select>
+      </td>
+      <p *ngIf="facilityForm.controls.status.hasError('required') && facilityForm.controls.status.touched" style="color: red">Status required</p>
+
+    </tr>
+    <tr>
+      <td>floor</td>
+      <td><input type="number" formControlName="floor" name="floor"></td>
+      <p *ngIf="facilityForm.controls.floor.hasError('min') && facilityForm.controls.floor.touched" style="color: red">> 0</p>
+      <p *ngIf="facilityForm.controls.floor.hasError('required') && facilityForm.controls.floor.touched" style="color: red">Cost required</p>
+
+    </tr>
+  </table>
 </form>
-<app-footer></app-footer>

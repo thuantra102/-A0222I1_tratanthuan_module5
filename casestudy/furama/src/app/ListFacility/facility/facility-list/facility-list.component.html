@@ -1,6 +1,9 @@
 
 <h2>Facility List</h2>
-<button routerLink="/facilityList/create" class="btn btn-primary"><a>ADD NEW</a></button>
+<button  (click)="addNew()"type="button"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
+ADD
+</button>
+
 <table class="table table-dark">
   <tr>
     <td>Id</td>
@@ -20,18 +23,66 @@
     <td>{{f.description}}</td>
     <td>{{f.poolArea}}</td>
     <td>
-      <p *ngIf="f.status">NEW</p>
-      <p *ngIf="!f.status">Old</p>
+      <p *ngIf="f.status === 'false'">Old</p>
+      <p *ngIf="f.status === 'true'">New</p>
+<!--      <p *ngIf="!f.status">Old</p>-->
     </td>
     <td>{{f.floor}}</td>
 
     <td>
-      <button class="btn btn-primary">Edit</button>
-      <button class="btn btn-danger">Delete</button>
+      <button  (click)="getInfo(f)" type="button"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
+        Edit
+      </button>
+      <button  (click)="getInfo(f)" type="button"class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" >
+        Delete
+      </button>
+
     </td>
 
   </tr>
 
 </table>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-facility-create #save [facility]="facility"></app-facility-create>
 
-<router-outlet></router-outlet>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="save.submit()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       {{facility?.id}}
+        {{facility?.name}}
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<router-outlet></router-outlet>-->

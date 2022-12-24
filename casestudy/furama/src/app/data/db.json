@@ -51,33 +51,69 @@
   ],
   "customers": [
     {
-      "id": 3,
-      "customerCode": "KH-1233",
+      "id": 4,
+      "customerCode": "KH-1231",
       "name": "SamSung J2",
       "phoneNumber": "0905908695",
+      "identifyNumber": "1234561323",
+      "email": "t@gmail.com",
+      "dateOfBirth": "2022-11-27"
+    },
+    {
+      "id": 5,
+      "customerCode": "KH-1238",
+      "name": "SamSung J2",
+      "phoneNumber": "0905908778",
       "identifyNumber": "1234567891",
-      "email": "a@gmail.com",
-      "dateOfBirth": "2022-12-20"
+      "email": "thuantra102@gmail.com",
+      "dateOfBirth": "2022-12-07"
+    },
+    {
+      "id": 6,
+      "customerCode": "KH-1234",
+      "name": "SamSung J2",
+      "phoneNumber": "0905908778",
+      "identifyNumber": "1234567891",
+      "email": "t@gmail.com",
+      "dateOfBirth": "2022-12-08"
+    },
+    {
+      "id": 7,
+      "customerCode": "KH-1232",
+      "name": "Thuan tra",
+      "phoneNumber": "0919009087",
+      "identifyNumber": "8976543781",
+      "email": "t@email.com",
+      "dateOfBirth": "2022-12-14"
     }
   ],
   "facilities": [
     {
+      "id": 1,
+      "name": "2",
+      "cost": 2132,
+      "description": "321",
+      "poolArea": 231,
+      "status": "true",
+      "floor": 23131
+    },
+    {
       "id": 2,
-      "name": "bicycle2",
+      "name": "qe",
       "cost": 123,
-      "description": "new",
-      "poolArea": 2123,
-      "status": true,
-      "floor": 3
+      "description": "213",
+      "poolArea": 213,
+      "status": "true",
+      "floor": 213
     },
     {
       "id": 3,
-      "name": "bicycle3",
+      "name": "fas thuan ",
       "cost": 123,
-      "description": "new",
-      "poolArea": 2123,
-      "status": true,
-      "floor": 3
+      "description": "New123123123",
+      "poolArea": 12312,
+      "status": "true",
+      "floor": 231
     }
   ]
 }

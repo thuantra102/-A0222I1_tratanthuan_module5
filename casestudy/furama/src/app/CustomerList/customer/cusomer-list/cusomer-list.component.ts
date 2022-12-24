@@ -31,7 +31,7 @@ export class CusomerListComponent implements OnInit {
 
   delete() {
     // console.log(this.customer)
-    console.log('COME IN HERE');
+    // console.log('COME IN HERE');
     this.cusomerService.deleteCustomer(this.customer.id).subscribe(data => {
       console.log(data)
       this.ngOnInit()
