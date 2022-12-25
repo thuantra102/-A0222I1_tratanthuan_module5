@@ -1,10 +1,12 @@
 <h1>Danh sách sản phẩm</h1>
+<button class="btn btn-primary" (click)="create()" type="button" data-toggle="modal" data-target="#exampleModal">Create</button>
 <table border="1">
   <tr>
     <td>STT</td>
     <td>Tên</td>
     <td>Giá</td>
     <td>Mô tả</td>
+    <td>Loai</td>
     <td>Edit</td>
 <!--    <td>Action</td>-->
   </tr>
@@ -13,6 +15,7 @@
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
+    <td>{{product.category.name}}</td>
 <!--    <td><a [routerLink]="['/product/edit/', product.id]" >Edit</a></td>-->
     <td><button (click)="deleteProduct(product)"  class="btn btn-danger">Delete</button></td>
     <td><button (click)="saveProduct(product)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -21,7 +24,7 @@
 
   </tr>
 </table>
-<!--<router-outlet> </router-outlet>-->
+
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

@@ -34,6 +34,7 @@ import { ProductCreateComponent } from './ss7-p3/product/product-create/product-
 import { Ss7E1Component } from './ss7-e1/ss7-e1.component';
 import { TranslateComponent } from './ss7-e1/dictionaryService/translate/translate.component';
 import { ProductEditComponent } from './ss7-p3/product/product-edit/product-edit.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { ProductEditComponent } from './ss7-p3/product/product-edit/product-edit
         BrowserModule,
         AppRoutingModule,
         FormsModule,
+      HttpClientModule,
         ReactiveFormsModule
     ],
   providers: [],

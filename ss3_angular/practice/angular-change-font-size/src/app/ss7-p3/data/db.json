@@ -1,23 +1,13 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "IPhone 12",
-      "price": 2400000,
-      "description": "New",
-      "category": {
-        "id" : 1,
-        "name" : "Phone"
-      }
-    },
-    {
       "id": 2,
       "name": "IPhone 13",
       "price": 2900000,
       "description": "Old",
       "category": {
-        "id" : 2,
-        "name" : "Advanced Phone"
+        "id": 2,
+        "name": "Advanced Phone"
       }
     },
     {
@@ -26,19 +16,26 @@
       "price": 12000,
       "description": "New",
       "category": {
-        "id" : 1,
-        "name" : "Phone"
+        "id": 1,
+        "name": "Phone"
       }
+    },
+    {
+      "id": 4,
+      "name": "ewq",
+      "price": 2131,
+      "description": "213",
+      "category": "2"
     }
   ],
   "category": [
     {
-      "id" : 1,
-      "name" : "Phone"
+      "id": 1,
+      "name": "Phone"
     },
     {
-      "id" : 2,
-      "name" : "Advanced Phone"
+      "id": 2,
+      "name": "Advanced Phone"
     }
   ],
   "profile": {

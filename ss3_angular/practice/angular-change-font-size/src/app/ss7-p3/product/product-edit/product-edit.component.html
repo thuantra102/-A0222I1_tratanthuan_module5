@@ -2,11 +2,6 @@
 <form [formGroup]="productForm" (ngSubmit)="submit()">
   <table border="1">
     <tr>
-      <td>Mã sản phẩm:</td>
-      <td><input type="number" formControlName="id" name="id" hidden></td>
-
-    </tr>
-    <tr>
       <td>Tên sản phẩm:</td>
       <td><input type="text" formControlName="name" name="name" ></td>
     </tr>
@@ -19,9 +14,14 @@
       <td><input type="text" formControlName="description" name="description"></td>
     </tr>
     <tr>
-      <td></td>
-<!--      <td><button>Chỉnh sửa</button></td>-->
+      <td>Category</td>
+      <td>
+        <select class="form-control" formControlName="category" name="category">
+          <option *ngFor="let c of categoryList" value="{{c.id}}">{{c.name}}</option>
+        </select>
+      </td>
     </tr>
+
   </table>
 </form>
 

@@ -16,29 +16,36 @@ export class Ss7P3Component implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('list khoi tao');
     this.getAll();
 
   }
 
   getAll() {
-    this.products = this.productService.getAll();
+    this.productService.getAllProduct().subscribe(data => {
+        this.products = data;
+    });
   }
 
   saveProduct(product: Product) {
     this.productEdit = product;
-    // console.log(this.productEdit);
+  }
+  create() {
+    this.productEdit = undefined;
   }
 
   deleteProduct(product: Product) {
     console.log(typeof product.id);
     const check = confirm('Do you want to delete this product ' +  product.name);
     if (check) {
-      this.productService.deleteProduct(product.id);
-      this.ngOnInit();
-      // this.router.navigate(['product']);
+      this.productService.deleteProduct(product.id).subscribe( data => {
+        this.ngOnInit();
+      });
+
+
     }
 
 
   }
+
+
 }
