@@ -60,6 +60,8 @@ export class ProductService {
   deleteProduct(id: number) {
     console.log('delete id= '  + id);
     return this.httpClient.delete(this.URL_PRODUCT + '/' +  id);
-
+  }
+  getCategoryById(id: number) {
+    return this.httpClient.get(this.URL_CATEGORY + '/' + id);
   }
 }

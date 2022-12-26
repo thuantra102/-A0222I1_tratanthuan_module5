@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Contract} from "../../model/contract";
 import {ActivatedRoute, ParamMap, Route, Router} from "@angular/router";
 import {ContractServiceService} from "../../service/contract-service.service";
+import {Facility} from "../../../ListFacility/model/facility";
+import {Customer} from "../../../CustomerList/model/customer";
 
 @Component({
   selector: 'app-contract-create',
   templateUrl: './contract-create.component.html',
   styleUrls: ['./contract-create.component.css']
 })
-export class ContractCreateComponent implements OnInit {
+export class ContractCreateComponent implements OnInit, OnChanges {
   form: FormGroup = new FormGroup({});
+  @Input('contractInput')
   contract: Contract;
+  facilityList: Facility[];
+  customerList: Customer[];
   constructor(private fb: FormBuilder,
               private activatedRoute: ActivatedRoute,
               private route : Router,
@@ -20,36 +25,40 @@ export class ContractCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.route.url.includes('contract/create')) {
-      // this.buildForm();
-      console.log("contract create")
-    } else  {
-      this.activatedRoute.paramMap.subscribe((paraMap: ParamMap) => {
-        console.log("contract edit")
-        // const id = paraMap.get('id');
-        // this.contractService.getById(id).subscribe( data => {
-        //   this.contract = data;
-        // });
-        // this.buildForm();
-      })
-    }
+    this.contractService.getAllCustomers().subscribe(data => {
+      this.customerList = data;
+    })
+    this.contractService.getAllFacilities().subscribe(data => {
+      this.facilityList = data;
+    })
 
+  }
+
+
+
+
+
+  submit() {
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes.contract.currentValue)
+    this.contract = changes.contract.currentValue;
+    this.buildForm();
 
   }
 
   buildForm() {
     this.form = this.fb.group({
-      id: this.contract.id,
-      name: this.contract.name,
-      customer: this.contract.customer,
-      facility : this.contract.facility,
-      dateStart : this.contract.dateStart,
-      dateFinish : this.contract.dateFinish,
-      deposit : this.contract.deposit
+      id: [this.contract == undefined ? '' : this.contract.id],
+      name: [this.contract == undefined ? '' : this.contract.name],
+      customer: [this.contract == undefined ? '' : this.contract.customer],
+      facility :[this.contract == undefined ? '' : this.contract.facility],
+      dateStart : [this.contract == undefined ? '' : this.contract.dateStart],
+      dateFinish : [this.contract == undefined ? '' : this.contract.dateFinish],
+      deposit : [this.contract == undefined ? '' : this.contract.deposit]
     })
   }
 
-  submit() {
-
-  }
 }

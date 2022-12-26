@@ -16,6 +16,7 @@ export class ProductEditComponent implements OnInit, OnChanges {
   product: Product;
   categoryList: Category;
   productForm: FormGroup = new FormGroup({});
+  selected: Category;
 
   constructor(private fb: FormBuilder,
               private  service: ProductService,
@@ -30,13 +31,16 @@ export class ProductEditComponent implements OnInit, OnChanges {
   }
 
   submit() {
-    console.log(this.productForm.value.category);
+    console.log('submit');
+    console.log(this.productForm);
     this.service.saveProduct(this.productForm.value).subscribe(data => {
       this.list.ngOnInit();
     });
   }
   ngOnChanges(changes: SimpleChanges): void {
     this.buildForm();
+    console.log('Onchange');
+    console.log(this.productForm);
   }
   buildForm() {
     this.productForm = this.fb.group({
@@ -44,7 +48,7 @@ export class ProductEditComponent implements OnInit, OnChanges {
       name: [this.product === undefined ? '' : this.product.name],
       price: [this.product === undefined ? '' : this.product.price],
       description:  [this.product === undefined ? '' : this.product.description],
-      category: [this.product === undefined ? '' : this.product.category.id]
+      category: [this.product === undefined ? '' : this.product.category]
     });
   }
 }

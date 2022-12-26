@@ -1,24 +1,42 @@
-<app-header></app-header>
+
 <h1>Tạo sản phẩm mới</h1>
 <form [formGroup]="form" (ngSubmit)="submit()">
   <table border="1">
     <tr>
       <td>Name</td>
-<!--      <td><input type="text" formControlName="name"></td>-->
+      <td><input type="text" formControlName="name"></td>
     </tr>
     <tr>
-      <td>Giá sản phẩm</td>
-<!--      <td><input type="number" formControlName="price"></td>-->
+      <td>Customer</td>
+      <td>
+        <select formControlName="customer">
+          <option>Chose one</option>
+          <option *ngFor="let c of customerList" [value]="c">{{c.name}}</option>
+        </select>
+      </td>
     </tr>
     <tr>
-      <td>Mô tả về sản phẩm</td>
-<!--      <td><input type="text" formControlName="description"></td>-->
+      <td>Facility</td>
+      <td>
+        <select formControlName="facility">
+          <option>Chose one</option>
+          <option *ngFor="let c of facilityList" [value]="c">{{c.name}}</option>
+        </select>
+      </td>
     </tr>
     <tr>
-      <td></td>
-      <td><button>Tạo mới</button></td>
+      <td>Date start</td>
+      <td><input type="date" name="dateStart" formControlName="dateStart"></td>
+    </tr>
+    <tr>
+      <td>Date Finish</td>
+      <td><input type="date" name="dateFinish" formControlName="dateFinish"></td>
+    </tr>
+    <tr>
+      <td>Deposit</td>
+      <td><input type="number" formControlName="deposit" name="deposit"></td>
     </tr>
   </table>
 </form>
 
-<app-footer></app-footer>
+

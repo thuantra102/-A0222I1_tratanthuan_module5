@@ -9,6 +9,7 @@ import {Contract} from "../../model/contract";
 })
 export class ContractListComponent implements OnInit {
   contracts: Contract[];
+  contract: Contract;
 
   constructor(private contractService: ContractServiceService) {
   }
@@ -23,4 +24,15 @@ export class ContractListComponent implements OnInit {
     });
   }
 
+  addNew() {
+    this.contract = undefined;
+  }
+
+  getInfo(f: Contract) {
+    this.contract = f;
+  }
+
+  delete() {
+
+  }
 }
