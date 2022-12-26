@@ -48,7 +48,7 @@ export class ProductEditComponent implements OnInit, OnChanges {
       name: [this.product === undefined ? '' : this.product.name],
       price: [this.product === undefined ? '' : this.product.price],
       description:  [this.product === undefined ? '' : this.product.description],
-      category: [this.product === undefined ? '' : this.product.category]
+      categoryCode  : [this.product === undefined ? '' : this.product.categoryCode]
     });
   }
 }

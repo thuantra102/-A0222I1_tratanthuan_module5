@@ -9,18 +9,18 @@
     <tr>
       <td>Customer</td>
       <td>
-        <select formControlName="customer">
-          <option>Chose one</option>
-          <option *ngFor="let c of customerList" [value]="c">{{c.name}}</option>
+        <select formControlName="customerCode">
+
+          <option *ngFor="let c of customerList" [value]="c.id">{{c.name}}</option>
         </select>
       </td>
     </tr>
     <tr>
       <td>Facility</td>
       <td>
-        <select formControlName="facility">
-          <option>Chose one</option>
-          <option *ngFor="let c of facilityList" [value]="c">{{c.name}}</option>
+        <select formControlName="facilityCode">
+
+          <option *ngFor="let c of facilityList" [value]="c.id">{{c.name}}</option>
         </select>
       </td>
     </tr>

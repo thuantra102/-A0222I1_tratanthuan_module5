@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ContractServiceService} from "../../service/contract-service.service";
 import {Contract} from "../../model/contract";
+import {Customer} from "../../../CustomerList/model/customer";
+import {Facility} from "../../../ListFacility/model/facility";
+import {subscribeOn} from "rxjs/operators";
 
 @Component({
   selector: 'app-contract-list',
@@ -10,12 +13,19 @@ import {Contract} from "../../model/contract";
 export class ContractListComponent implements OnInit {
   contracts: Contract[];
   contract: Contract;
-
+  customerList: Customer[];
+  facilityList: Facility[];
   constructor(private contractService: ContractServiceService) {
   }
 
   ngOnInit(): void {
     this.getAll();
+    this.contractService.getAllCustomers().subscribe(data => {
+      this.customerList = data;
+    })
+    this.contractService.getAllFacilities().subscribe(data => {
+      this.facilityList = data;
+    })
   }
 
   getAll() {
@@ -33,6 +43,26 @@ export class ContractListComponent implements OnInit {
   }
 
   delete() {
+    this.contractService.delete(this.contract.id).subscribe(data => {
+      this.ngOnInit()
+    })
 
   }
+  toCustomer(id: Number) {
+    for (let i = 0; i <  this.customerList.length; i++) {
+      if(this.customerList[i].id == id) {
+        return this.customerList[i].name;
+      }
+
+    }
+  }
+  toFacility(id: Number) {
+    for (let i = 0; i <  this.facilityList.length; i++) {
+      if(this.facilityList[i].id == id) {
+        return this.facilityList[i].name;
+      }
+
+    }
+  }
+
 }

@@ -5,6 +5,7 @@ import {ActivatedRoute, ParamMap, Route, Router} from "@angular/router";
 import {ContractServiceService} from "../../service/contract-service.service";
 import {Facility} from "../../../ListFacility/model/facility";
 import {Customer} from "../../../CustomerList/model/customer";
+import {ContractListComponent} from "../contract-list/contract-list.component";
 
 @Component({
   selector: 'app-contract-create',
@@ -20,7 +21,8 @@ export class ContractCreateComponent implements OnInit, OnChanges {
   constructor(private fb: FormBuilder,
               private activatedRoute: ActivatedRoute,
               private route : Router,
-              private  contractService : ContractServiceService) {
+              private  contractService : ContractServiceService,
+              private list: ContractListComponent) {
 
   }
 
@@ -39,7 +41,9 @@ export class ContractCreateComponent implements OnInit, OnChanges {
 
 
   submit() {
-
+      this.contractService.save(this.form.value).subscribe( data => {
+        this.list.ngOnInit()
+      })
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -53,8 +57,8 @@ export class ContractCreateComponent implements OnInit, OnChanges {
     this.form = this.fb.group({
       id: [this.contract == undefined ? '' : this.contract.id],
       name: [this.contract == undefined ? '' : this.contract.name],
-      customer: [this.contract == undefined ? '' : this.contract.customer],
-      facility :[this.contract == undefined ? '' : this.contract.facility],
+      customerCode: [this.contract == undefined ? '' : this.contract.customerCode],
+      facilityCode :[this.contract == undefined ? '' : this.contract.facilityCode],
       dateStart : [this.contract == undefined ? '' : this.contract.dateStart],
       dateFinish : [this.contract == undefined ? '' : this.contract.dateFinish],
       deposit : [this.contract == undefined ? '' : this.contract.deposit]

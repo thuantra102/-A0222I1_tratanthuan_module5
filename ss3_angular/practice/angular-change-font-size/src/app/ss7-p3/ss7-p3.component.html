@@ -15,7 +15,8 @@
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
-    <td>{{product.category.name}}</td>
+
+    <td>{{changeToName(product.categoryCode)}}</td>
 <!--    <td><a [routerLink]="['/product/edit/', product.id]" >Edit</a></td>-->
     <td><button (click)="deleteProduct(product)"  class="btn btn-danger">Delete</button></td>
     <td><button (click)="saveProduct(product)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">

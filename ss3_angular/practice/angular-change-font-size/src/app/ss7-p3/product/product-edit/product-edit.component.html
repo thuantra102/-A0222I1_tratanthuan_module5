@@ -16,8 +16,8 @@
     <tr>
       <td>Category</td>
       <td>
-        <select class="form-control" formControlName="category" name="category" [(ngModel)]="selected">
-          <option *ngFor="let c of categoryList" [ngValue]="c" >{{c.name}}</option>
+        <select class="form-control" formControlName="categoryCode" name="categoryCode" >
+          <option *ngFor="let c of categoryList" [ngValue]="c.id" >{{c.name}}</option>
         </select>
       </td>
     </tr>

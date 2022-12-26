@@ -24,4 +24,14 @@ export class ContractServiceService {
   getAllCustomers() : Observable<any> {
    return this.httpClient.get(this.URL_CUSTOMERS)
   }
+  save(contract : Contract) {
+    if (contract.id) {
+      return this.httpClient.put(this.URL + "/" + contract.id, contract)
+    } else {
+      return this.httpClient.post(this.URL, contract);
+    }
+  }
+  delete(id : Number) {
+   return this.httpClient.delete(this.URL + "/" + id);
+  }
 }

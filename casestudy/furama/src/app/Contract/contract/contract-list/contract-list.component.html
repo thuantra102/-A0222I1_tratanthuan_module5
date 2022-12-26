@@ -17,8 +17,8 @@
   <tr *ngFor="let f of contracts">
     <td>{{f.id}}</td>
     <td>{{f.name}}</td>
-    <td>{{f.customer.name}}</td>
-    <td>{{f.facility.name}}</td>
+    <td>{{toCustomer(f.customerCode)}}</td>
+    <td>{{toFacility(f.facilityCode)}}</td>
     <td>{{f.dateStart | date: 'dd-MM-yyyy'}}</td>
     <td>{{f.dateFinish | date: 'dd-MM-yyyy'}}</td>
     <td>{{f.deposit}}</td>

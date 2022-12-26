@@ -5,40 +5,35 @@
       "name": "IPhone 13",
       "price": 2900000,
       "description": "Old",
-      "category": {
-        "id": 1,
-        "name": "Phone"
-      }
+      "categoryCode": 1
     },
     {
       "id": 3,
       "name": "Samsung J10",
       "price": 12000,
       "description": "New",
-      "category": {
-        "id": 1,
-        "name": "Phone"
-      }
+      "categoryCode": 2
     },
     {
       "id": 4,
       "name": "dffg",
       "price": 213,
       "description": "123",
-      "category": {
-        "id": 1,
-        "name": "Phone"
-      }
+      "categoryCode": 2
     },
     {
       "id": 5,
-      "name": "SamSung J2",
-      "price": 900,
-      "description": "New",
-      "category": {
-        "id": 1,
-        "name": "Phone"
-      }
+      "name": "312",
+      "price": 321,
+      "description": "123",
+      "categoryCode": 1
+    },
+    {
+      "id": 6,
+      "name": "sadfsdfdsafdsa",
+      "price": 21,
+      "description": "das",
+      "categoryCode": 1
     }
   ],
   "category": [

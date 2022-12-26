@@ -1,52 +1,22 @@
 {
   "contracts": [
     {
-      "id": 1,
+      "id": 2,
       "name": "Thuan Tra",
-      "customer": {
-        "id": "KH-1222",
-        "name": "Tra Tan Luan",
-        "phoneNumber": "0905908000",
-        "identifyNumber": "123131344",
-        "email": "luantra@gmail.com",
-        "dateOfBirth": "2020-12-12"
-      },
-      "facility": {
-        "id": 5,
-        "name": "hellll",
-        "cost": 1912,
-        "description": "old",
-        "poolArea": 3,
-        "status": true,
-        "floor": 9
-      },
+      "customerCode": "7",
+      "facilityCode": 3,
       "dateStart": "2020-08-11",
       "dateFinish": "2020-08-11",
       "deposit": 12312
     },
     {
-      "id": 2,
-      "name": "Thuan Tra Tan",
-      "customer": {
-        "id": "KH-121231",
-        "name": "Do Le Luan",
-        "phoneNumber": "0905908000",
-        "identifyNumber": "123131344",
-        "email": "luantra@gmail.com",
-        "dateOfBirth": "2020-12-12"
-      },
-      "facility": {
-        "id": 5,
-        "name": "LUANLLL",
-        "cost": 1912,
-        "description": "old",
-        "poolArea": 3,
-        "status": true,
-        "floor": 9
-      },
-      "dateStart": "2020-08-11",
-      "dateFinish": "2020-08-11",
-      "deposit": 12312
+      "id": 3,
+      "name": "weq",
+      "customerCode": "4",
+      "facilityCode": "2",
+      "dateStart": "2022-12-01",
+      "dateFinish": "2023-01-05",
+      "deposit": 321312
     }
   ],
   "customers": [
@@ -79,12 +49,12 @@
     },
     {
       "id": 7,
-      "customerCode": "KH-1232",
-      "name": "Thuan tra",
-      "phoneNumber": "0919009087",
-      "identifyNumber": "8976543781",
-      "email": "t@email.com",
-      "dateOfBirth": "2022-12-14"
+      "customerCode": "KH-1999",
+      "name": "Thai Quang Huy hoang",
+      "phoneNumber": "0901231231",
+      "identifyNumber": "1234567891",
+      "email": "thuantra102@gmail.com",
+      "dateOfBirth": "2022-12-27"
     }
   ],
   "facilities": [
