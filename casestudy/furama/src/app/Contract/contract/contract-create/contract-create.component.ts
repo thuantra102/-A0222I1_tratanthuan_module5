@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Contract} from "../../model/contract";
 import {ActivatedRoute, ParamMap, Route, Router} from "@angular/router";
 import {ContractServiceService} from "../../service/contract-service.service";
@@ -56,12 +56,12 @@ export class ContractCreateComponent implements OnInit, OnChanges {
   buildForm() {
     this.form = this.fb.group({
       id: [this.contract == undefined ? '' : this.contract.id],
-      name: [this.contract == undefined ? '' : this.contract.name],
-      customerCode: [this.contract == undefined ? '' : this.contract.customerCode],
-      facilityCode :[this.contract == undefined ? '' : this.contract.facilityCode],
-      dateStart : [this.contract == undefined ? '' : this.contract.dateStart],
-      dateFinish : [this.contract == undefined ? '' : this.contract.dateFinish],
-      deposit : [this.contract == undefined ? '' : this.contract.deposit]
+      name: [this.contract == undefined ? '' : this.contract.name,[Validators.required]],
+      customerCode: [this.contract == undefined ? '' : this.contract.customerCode,[Validators.required]],
+      facilityCode :[this.contract == undefined ? '' : this.contract.facilityCode,[Validators.required]],
+      dateStart : [this.contract == undefined ? '' : this.contract.dateStart,[Validators.required]],
+      dateFinish : [this.contract == undefined ? '' : this.contract.dateFinish,[Validators.required]],
+      deposit : [this.contract == undefined ? '' : this.contract.deposit,[Validators.min(0)]]
     })
   }
 

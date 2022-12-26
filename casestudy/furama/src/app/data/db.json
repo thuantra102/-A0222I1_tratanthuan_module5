@@ -17,6 +17,15 @@
       "dateStart": "2022-12-01",
       "dateFinish": "2023-01-05",
       "deposit": 321312
+    },
+    {
+      "id": 4,
+      "name": "thuan",
+      "customerCode": "5",
+      "facilityCode": "2",
+      "dateStart": "2022-12-08",
+      "dateFinish": "2022-12-15",
+      "deposit": 10
     }
   ],
   "customers": [

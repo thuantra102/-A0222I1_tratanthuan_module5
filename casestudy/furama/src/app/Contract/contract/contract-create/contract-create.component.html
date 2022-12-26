@@ -5,15 +5,18 @@
     <tr>
       <td>Name</td>
       <td><input type="text" formControlName="name"></td>
+      <p *ngIf="form.controls.name.hasError('required') && form.controls.name.touched" style="color: red">required</p>
+
     </tr>
     <tr>
       <td>Customer</td>
       <td>
         <select formControlName="customerCode">
-
           <option *ngFor="let c of customerList" [value]="c.id">{{c.name}}</option>
         </select>
       </td>
+      <p *ngIf="form.controls.customerCode.hasError('required') && form.controls.customerCode.touched" style="color: red">required</p>
+
     </tr>
     <tr>
       <td>Facility</td>
@@ -23,18 +26,27 @@
           <option *ngFor="let c of facilityList" [value]="c.id">{{c.name}}</option>
         </select>
       </td>
+      <p *ngIf="form.controls.facilityCode.hasError('required') && form.controls.facilityCode.touched" style="color: red">required</p>
+
     </tr>
     <tr>
       <td>Date start</td>
       <td><input type="date" name="dateStart" formControlName="dateStart"></td>
+      <p *ngIf="form.controls.dateStart.hasError('required') && form.controls.dateStart.touched" style="color: red">required</p>
+
+
     </tr>
     <tr>
       <td>Date Finish</td>
       <td><input type="date" name="dateFinish" formControlName="dateFinish"></td>
+      <p *ngIf="form.controls.dateFinish.hasError('required') && form.controls.dateFinish.touched" style="color: red">required</p>
+
     </tr>
     <tr>
       <td>Deposit</td>
       <td><input type="number" formControlName="deposit" name="deposit"></td>
+      <p *ngIf="form.controls.deposit.hasError('min') && form.controls.deposit.touched" style="color: red">Lon hon 0</p>
+
     </tr>
   </table>
 </form>
