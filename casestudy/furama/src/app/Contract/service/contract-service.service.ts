@@ -34,4 +34,7 @@ export class ContractServiceService {
   delete(id : Number) {
    return this.httpClient.delete(this.URL + "/" + id);
   }
+  search(name,customerId,facilityId) :Observable<any> {
+   return this.httpClient.get(`${this.URL}?_sort=id&_order=desc&name_like=${name}&customerCode_like=${customerId}&facilityCode_like=${facilityId}`)
+  }
 }

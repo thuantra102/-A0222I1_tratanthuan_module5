@@ -17,7 +17,10 @@ import { ContractCreateComponent } from './Contract/contract/contract-create/con
 import { ReactiveFormsModule} from "@angular/forms";
 import { FormsModule} from "@angular/forms";
 import { CustomerSaveComponent } from './CustomerList/customer/customer-save/customer-save.component';
-
+// @ts-ignore
+import {NgxPaginationModule} from "ngx-pagination";
+import {Ng2SearchPipeModule} from "ng2-search-filter";
+import {NgpSortModule} from "ngp-sort-pipe";
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { CustomerSaveComponent } from './CustomerList/customer/customer-save/cus
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    NgpSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,15 +11,23 @@ import {FacilityServiceService} from "../../service/facility-service.service";
 export class FacilityListComponent implements OnInit {
   facilities: Facility[];
   facility: Facility;
+  config: any;
+  searchText: any;
   constructor(private facilityService: FacilityServiceService) { }
 
   ngOnInit(): void {
+
    this.getAll();
 
   }
   getAll() {
     this.facilityService.getAll().subscribe(data => {
       this.facilities = data;
+      this.config = {
+        itemsPerPage: 5,
+        currentPage: 1,
+        totalItems: this.facilities.length
+      };
     })
   }
   getInfo(f) {
@@ -39,4 +47,7 @@ export class FacilityListComponent implements OnInit {
     )
   }
 
+  pageChanged(event: number) {
+    this.config.currentPage = event;
+  }
 }

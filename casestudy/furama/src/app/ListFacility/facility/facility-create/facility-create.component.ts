@@ -27,11 +27,13 @@ export class FacilityCreateComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
    this.facility = changes.facility.currentValue;
-    // console.log(this.facility)
+   this.facility = Object.assign({}, this.facility);
+   console.log(changes.facility.isFirstChange())
     if(this.facility != undefined) {
       this.buildForm(this.facility.id,this.facility.name,this.facility.cost,this.facility.description,this.facility.poolArea,this.facility.status,this.facility.floor)
     } else {
       this.buildForm("","","","","","","")
+
     }
 
 
@@ -53,7 +55,14 @@ export class FacilityCreateComponent implements OnInit, OnChanges {
     console.log(this.facilityForm)
     this.facilityService.save(this.facilityForm.value).subscribe(data => {
       this.list.ngOnInit();
+    },error => {}, () => {
+      this.resetForm();
     });
+
+  }
+  resetForm() {
+    console.log("close")
+    this.facilityForm.reset();
 
   }
 }

@@ -1,41 +1,70 @@
 
 <h2>Contract</h2>
+<div style="display: flex; gap: 10px">
+  <div>
+    <form [formGroup]="formSearch" (ngSubmit)="search()">
+      <input placeholder="search name" formControlName="name" name="nameSearch">
+      <select style="margin-left: 10px" formControlName="customerCode">
+        <option *ngFor="let c of customerList" [value]="c.id">{{c.name}}</option>
+      </select>
+      <select style="margin-left: 10px" formControlName="facilityCode">
+        <option *ngFor="let f of facilityList" [value]="f.id">{{f.name}}</option>
+      </select>
+      <button style="margin-left: 10px" class="btn btn-info" type="submit">Search</button>
+    </form>
+  </div>
+  <div>
+    <button class="btn btn-danger" (click)="reset()">Reset</button>
+  </div>
+
+
+</div>
+
+<!--<button (click)="findAllByNameAndC/ustomerAndFacility('','4','3')">Search</button>-->
 <button  (click)="addNew()"type="button"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
   ADD
 </button>
-<table class="table table-dark">
-  <tr>
-    <td>Id</td>
-    <td>Name</td>
-    <td>Customer</td>
-    <td>Facility</td>
-    <td>Date Start</td>
-    <td>Date Finish</td>
-    <td>Deposit</td>
-    <td>Action</td>
-  </tr>
-  <tr *ngFor="let f of contracts">
-    <td>{{f.id}}</td>
-    <td>{{f.name}}</td>
-    <td>{{toCustomer(f.customerCode)}}</td>
-    <td>{{toFacility(f.facilityCode)}}</td>
-    <td>{{f.dateStart | date: 'dd-MM-yyyy'}}</td>
-    <td>{{f.dateFinish | date: 'dd-MM-yyyy'}}</td>
-    <td>{{f.deposit}}</td>
+  <table class="table table-sm table-dark">
+    <thead>
+    <tr>
+      <td scope="col">Id</td>
+      <td scope="col">Name</td>
+      <td scope="col">Customer</td>
+      <td scope="col">Facility</td>
+      <td scope="col">Date Start</td>
+      <td scope="col">Date Finish</td>
+      <td scope="col">Deposit</td>
+      <td scope="col">Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let f of contracts| paginate: config; let i = index ">
+      <td>{{i + 1}}</td>
+      <td>{{f.name}}</td>
+      <td>{{toCustomer(f.customerCode)}}</td>
+      <td>{{toFacility(f.facilityCode)}}</td>
+      <td>{{f.dateStart | date: 'dd-MM-yyyy'}}</td>
+      <td>{{f.dateFinish | date: 'dd-MM-yyyy'}}</td>
+      <td>{{f.deposit}}</td>
 
 
-    <td>
-      <button  (click)="getInfo(f)" type="button"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
-        Edit
-      </button>
-      <button  (click)="getInfo(f)" type="button"class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" >
-        Delete
-      </button>
-    </td>
+      <td>
+        <button  (click)="getInfo(f)" type="button"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
+          Edit
+        </button>
+        <button  (click)="getInfo(f)" type="button"class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" >
+          Delete
+        </button>
+      </td>
 
-  </tr>
+    </tr>
+    </tbody>
+
+
 
 </table>
+<pagination-controls (pageChange)="pageChanged($event)" previousLabel="Trang trước" nextLabel="Trang sau"></pagination-controls>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -52,7 +81,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="save.submit()">Save</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="save.submit()" [hidden]="save.form.status == 'INVALID'">Save</button>
       </div>
     </div>
   </div>

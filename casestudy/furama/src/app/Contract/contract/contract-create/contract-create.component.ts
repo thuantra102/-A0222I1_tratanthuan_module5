@@ -16,8 +16,8 @@ export class ContractCreateComponent implements OnInit, OnChanges {
   form: FormGroup = new FormGroup({});
   @Input('contractInput')
   contract: Contract;
-  facilityList: Facility[];
-  customerList: Customer[];
+  facilityList: Facility[] =[];
+  customerList: Customer[] =[];
   constructor(private fb: FormBuilder,
               private activatedRoute: ActivatedRoute,
               private route : Router,
@@ -61,7 +61,7 @@ export class ContractCreateComponent implements OnInit, OnChanges {
       facilityCode :[this.contract == undefined ? '' : this.contract.facilityCode,[Validators.required]],
       dateStart : [this.contract == undefined ? '' : this.contract.dateStart,[Validators.required]],
       dateFinish : [this.contract == undefined ? '' : this.contract.dateFinish,[Validators.required]],
-      deposit : [this.contract == undefined ? '' : this.contract.deposit,[Validators.min(0)]]
+      deposit : [this.contract == undefined ? '' : this.contract.deposit,[Validators.required,Validators.min(0)]]
     })
   }
 

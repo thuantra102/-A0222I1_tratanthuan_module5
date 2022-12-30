@@ -39,12 +39,12 @@
     <tr>
       <td>
       </td>
-      <td><button class="btn btn-primary" type="submit">Save</button></td>
+      <td><button [hidden]="customerForm.status == 'INVALID'" class="btn btn-primary" type="submit">Save</button></td>
     </tr>
     <tr>
       <td>
       </td>
-      <td><button class="btn btn-danger" routerLink="/customer/list">Cancle</button></td>
+      <td><button  class="btn btn-danger" routerLink="/customer/list">Cancle</button></td>
     </tr>
   </table>
 </form>

@@ -42,6 +42,7 @@ export class CustomerSaveComponent implements OnInit {
       console.log(data);
       this.router.navigateByUrl('/customer/list')
     })
+
   }
   buildForm() {
     this.customerForm = this.formBuilder.group({

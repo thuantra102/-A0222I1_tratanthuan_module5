@@ -46,6 +46,7 @@
       <td>Deposit</td>
       <td><input type="number" formControlName="deposit" name="deposit"></td>
       <p *ngIf="form.controls.deposit.hasError('min') && form.controls.deposit.touched" style="color: red">Lon hon 0</p>
+      <p *ngIf="form.controls.deposit.hasError('required') && form.controls.deposit.touched" style="color: red">Required</p>
 
     </tr>
   </table>
