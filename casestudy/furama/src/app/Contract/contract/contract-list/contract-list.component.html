@@ -5,6 +5,9 @@
     <form [formGroup]="formSearch" (ngSubmit)="search()">
       <input placeholder="search name" formControlName="name" name="nameSearch">
       <select style="margin-left: 10px" formControlName="customerCode">
+        <option selected="selected">
+          chọn
+        </option>
         <option *ngFor="let c of customerList" [value]="c.id">{{c.name}}</option>
       </select>
       <select style="margin-left: 10px" formControlName="facilityCode">

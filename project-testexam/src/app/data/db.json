@@ -1,0 +1,69 @@
+{
+  "objects": [
+    {
+      "id": 1,
+      "name": "json-servereawds",
+      "phoneNumber": "0921313123123",
+      "typeCode": 1,
+      "dateOfBirth": "2020-08-08",
+      "gender": true
+    },
+    {
+      "id": 2,
+      "name": "json-server",
+      "phoneNumber": "0921313123123",
+      "typeCode": 2,
+      "dateOfBirth": "2020-08-08",
+      "gender": true
+    },
+    {
+      "id": 3,
+      "name": "thuan",
+      "phoneNumber": "213123123123",
+      "typeCode": "1",
+      "dateOfBirth": "2022-12-14",
+      "gender": "true"
+    },
+    {
+      "id": 4,
+      "name": "thuan123131",
+      "phoneNumber": "123123123123",
+      "typeCode": "2",
+      "dateOfBirth": "2022-12-07",
+      "gender": "true"
+    }
+  ],
+  "types": [
+    {
+      "id": 1,
+      "name": "High"
+    },
+    {
+      "id": 2,
+      "name": "Low"
+    }
+  ],
+  "soTietKiem": [
+    {
+      "id": 1,
+      "maKh": 1,
+      "tenKh": "Huy Kkka",
+      "ngayMoSo": "2022-12-07",
+      "thoiGianBatDau": "2022-12-14",
+      "kyHang": "3 Thang",
+      "soTienGoi": 10,
+      "laiSuat": 123,
+      "uuDai": "sdfsadf"
+    }
+  ],
+  "khachHang": [
+    {
+      "id": 1,
+      "tenKhachHang": "sfdsadfasf"
+    },
+    {
+      "id": 2,
+      "tenKhachHang": "dsfa"
+    }
+  ]
+}

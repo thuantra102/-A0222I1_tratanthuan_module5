@@ -1,0 +1,165 @@
+<div style="display: flex; gap: 10px">
+  <div>
+    <form [formGroup]="formSearch" (ngSubmit)="search()">
+      <input placeholder="search name" formControlName="tenKhSearch" name="tenKh">
+      <select style="margin-left: 10px" formControlName="maSoTkSearch">
+        <option *ngFor="let c of soTietKiemList" [value]="c.id">{{c.id}}</option>
+      </select><button style="margin-left: 10px" class="btn btn-info" type="submit">Search</button>
+    </form>
+  </div>
+  <div>
+    <button class="btn btn-danger" (click)="reset()">Reset</button>
+  </div>
+
+
+</div>
+
+
+<button  (click)="addNew()"type="button"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
+  ADD
+</button>
+<table class="table table-sm table-dark">
+  <thead>
+  <tr>
+    <td scope="col">Ma so</td>
+    <td scope="col">Ma Khach Hang</td>
+    <td scope="col">Ten Khach Hang</td>
+    <td scope="col">ngay Mo So</td>
+    <td scope="col">Thoi gian bat dau</td>
+    <td scope="col">Ki Hang</td>
+    <td scope="col">So tien goi</td>
+    <td scope="col">Lai suat</td>
+    <td scope="col">Action</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let f of soTietKiemList| paginate: config; let i = index ">
+    <td>{{f.id}}</td>
+    <td>{{f.maKh}}</td>
+    <td>{{f.tenKh}}</td>
+    <td>{{f.ngayMoSo | date: 'dd-MM-yyyy'}}</td>
+    <td>{{f.thoiGianBatDau | date: 'dd-MM-yyyy'}}</td>
+    <td>{{f.kyHang}} </td>
+    <td>{{f.soTienGoi}} Trieu</td>
+    <td>{{f.laiSuat}} </td>
+    <td>
+      <button  (click)="getInfo(f)" type="button"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
+        Edit
+      </button>
+      <button  (click)="getInfo(f)" type="button"class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" >
+        Delete
+      </button>
+    </td>
+
+  </tr>
+  </tbody>
+
+
+
+</table>
+<pagination-controls (pageChange)="pageChanged($event)" previousLabel="Trang trước" nextLabel="Trang sau"></pagination-controls>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form [formGroup]="formSave">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Save</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <table>
+          <tr>
+            <td>Ma so So</td>
+            <td>{{soTietKiem?.id}}</td>
+          </tr>
+          <tr>
+            <td>Ma Khach Hang</td>
+            <td>{{soTietKiem?.maKh}}</td>
+          </tr>
+          <tr>
+            <td>Ten Khach Hang</td>
+            <input  type="text" formControlName="tenKh" name="tenKh">
+            <p *ngIf="formSave.controls.tenKh.hasError('required') && formSave.controls.tenKh.touched" style="color: red">required</p>
+            <p *ngIf="formSave.controls.tenKh.hasError('pattern') && formSave.controls.tenKh.touched" style="color: red">Khong co so</p>
+
+          </tr>
+          <tr>
+            <td>Ngay Mo So</td>
+            <input  type="date" formControlName="ngayMoSo" name="ngayMoSo">
+            <p *ngIf="formSave.controls.ngayMoSo.hasError('required') && formSave.controls.ngayMoSo.touched" style="color: red">required</p>
+
+          </tr>
+          <tr>
+            <td>THoi gian bat dau goi</td>
+            <input  type="date" formControlName="thoiGianBatDau" name="thoiGianBatDau">
+            <p *ngIf="formSave.controls.thoiGianBatDau.hasError('required') && formSave.controls.thoiGianBatDau.touched" style="color: red">required</p>
+
+          </tr>
+          <tr>
+            <td>Ky Hang</td>
+            <input  type="text" formControlName="kyHang" name="kyHang">
+            <p *ngIf="formSave.controls.kyHang.hasError('required') && formSave.controls.kyHang.touched" style="color: red">required</p>
+            <p *ngIf="formSave.controls.kyHang.hasError('kyHangValid') && formSave.controls.kyHang.touched" style="color: red">sai format</p>
+
+          </tr>
+          <tr>
+            <td>soTienGoi</td>
+            <input  type="number" formControlName="soTienGoi" name="soTienGoi">
+            <p *ngIf="formSave.controls.soTienGoi.hasError('required') && formSave.controls.soTienGoi.touched" style="color: red">required</p>
+            <p *ngIf="formSave.controls.soTienGoi.hasError('min') && formSave.controls.soTienGoi.touched" style="color: red">Lon Hon 10 trieu</p>
+
+          </tr>
+          <tr>
+            <td>laiSuat</td>
+            <input  type="number" formControlName="laiSuat" name="laiSuat">
+            <p *ngIf="formSave.controls.laiSuat.hasError('required') && formSave.controls.laiSuat.touched" style="color: red">required</p>
+
+          </tr>
+          <tr>
+            <td>uu dai</td>
+            <input  type="text" formControlName="uuDai" name="uuDai">
+            <p *ngIf="formSave.controls.uuDai.hasError('required') && formSave.controls.uuDai.touched" style="color: red">required</p>
+
+          </tr>
+
+
+
+
+        </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="submit()" >Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xoa So Tiet Kiem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Ban co mua xoa so tiet kiem co ma so so la</p>
+        {{soTietKiem?.id}}
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="delete()">DELETE</button>
+      </div>
+    </div>
+  </div>
+</div>
