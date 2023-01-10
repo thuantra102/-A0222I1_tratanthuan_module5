@@ -1,50 +1,50 @@
-<h3>Save customer</h3>
-<form [formGroup]="customerForm" (ngSubmit)="submit()" >
-  <table   class="table-primary" >
-    <tr>
-      <td>Customer ID</td>
-      <td><input  type="text" formControlName="customerCode" name="customerId"></td>
-      <p *ngIf="customerForm.controls.customerCode.hasError('pattern') && customerForm.controls.customerCode.touched" style="color: red">Customer Id InValid</p>
-    </tr>
-    <tr>
-      <td>Name</td>
-      <td><input type="text" formControlName="name" name="name"></td>
-      <p *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.touched" style="color: red">Name required</p>
+  <h3>Save customer</h3>
+  <form [formGroup]="customerForm" (ngSubmit)="submit()" >
+    <table   class="table-primary" >
+      <tr>
+        <td>Customer ID</td>
+        <td><input  type="text" formControlName="customerCode" name="customerId"></td>
+        <p *ngIf="customerForm.controls.customerCode.hasError('pattern') && customerForm.controls.customerCode.touched" style="color: red">Customer Id InValid</p>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td><input type="text" formControlName="name" name="name"></td>
+        <p *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.touched" style="color: red">Name required</p>
+
+      </tr>
+      <tr>
+        <td>Phone Number</td>
+        <td><input type="text" formControlName="phoneNumber" name="phoneNumber"></td>
+        <p *ngIf="customerForm.controls.phoneNumber.hasError('pattern') && customerForm.controls.phoneNumber.touched" style="color: red">Phone Id InValid -> 090 or 091</p>
+
+
+      <tr>
+        <td>Identify Number</td>
+        <td><input type="text"  formControlName="identifyNumber" name="identifyNumber"></td>
+      <p *ngIf="customerForm.controls.identifyNumber.hasError('pattern') && customerForm.controls.identifyNumber.touched" style="color: red">identifyNumber In InValid 10 number</p>
 
     </tr>
-    <tr>
-      <td>Phone Number</td>
-      <td><input type="text" formControlName="phoneNumber" name="phoneNumber"></td>
-      <p *ngIf="customerForm.controls.phoneNumber.hasError('pattern') && customerForm.controls.phoneNumber.touched" style="color: red">Phone Id InValid -> 090 or 091</p>
+      <tr>
+        <td>Email</td>
+        <td><input type="text"  formControlName="email"  name="email"></td>
+        <p *ngIf="customerForm.controls.email.hasError('email') && customerForm.controls.email.touched" style="color: red">Email invalid</p>
 
+      </tr>
+      <tr>
+        <td>Date Of Birth</td>
+        <td><input type="date"  formControlName="dateOfBirth"  name="name"></td>
+        <p *ngIf="customerForm.controls.dateOfBirth.hasError('required') && customerForm.controls.dateOfBirth.touched" style="color: red">Date of birth required</p>
 
-    <tr>
-      <td>Identify Number</td>
-      <td><input type="text"  formControlName="identifyNumber" name="identifyNumber"></td>
-    <p *ngIf="customerForm.controls.identifyNumber.hasError('pattern') && customerForm.controls.identifyNumber.touched" style="color: red">identifyNumber In InValid 10 number</p>
-
-  </tr>
-    <tr>
-      <td>Email</td>
-      <td><input type="text"  formControlName="email"  name="email"></td>
-      <p *ngIf="customerForm.controls.email.hasError('email') && customerForm.controls.email.touched" style="color: red">Email invalid</p>
-
-    </tr>
-    <tr>
-      <td>Date Of Birth</td>
-      <td><input type="date"  formControlName="dateOfBirth"  name="name"></td>
-      <p *ngIf="customerForm.controls.dateOfBirth.hasError('required') && customerForm.controls.dateOfBirth.touched" style="color: red">Date of birth required</p>
-
-    </tr>
-    <tr>
-      <td>
-      </td>
-      <td><button [hidden]="customerForm.status == 'INVALID'" class="btn btn-primary" type="submit">Save</button></td>
-    </tr>
-    <tr>
-      <td>
-      </td>
-      <td><button  class="btn btn-danger" routerLink="/customer/list">Cancle</button></td>
-    </tr>
-  </table>
-</form>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td><button [hidden]="customerForm.status == 'INVALID'" class="btn btn-primary" type="submit">Save</button></td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td><button  class="btn btn-danger" routerLink="/customer/list">Cancle</button></td>
+      </tr>
+    </table>
+  </form>

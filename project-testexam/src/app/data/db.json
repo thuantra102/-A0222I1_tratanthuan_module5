@@ -54,6 +54,17 @@
       "soTienGoi": 10,
       "laiSuat": 123,
       "uuDai": "sdfsadf"
+    },
+    {
+      "id": 2,
+      "maKh": 2,
+      "tenKh": "Huy Kkka",
+      "ngayMoSo": "2022-12-07",
+      "thoiGianBatDau": "2022-12-14",
+      "kyHang": "3 Thang",
+      "soTienGoi": 10,
+      "laiSuat": 123,
+      "uuDai": "sdfsadf"
     }
   ],
   "khachHang": [

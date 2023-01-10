@@ -12,7 +12,6 @@ import {ifError} from "assert";
 })
 export class CustomerSaveComponent implements OnInit {
   customerForm: FormGroup;
-
   check: boolean = true;
   customer: Customer;
   constructor(private activatedRoute: ActivatedRoute,

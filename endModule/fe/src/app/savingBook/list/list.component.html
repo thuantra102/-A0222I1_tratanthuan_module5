@@ -1,0 +1,40 @@
+<h3>Saving Book List</h3>
+<button routerLink="savingBook/create" class="btn btn-warning">ADD</button>
+<table class="table table-sm table-dark">
+  <thead>
+  <tr>
+    <td scope="col">Ma so</td>
+    <td scope="col">Ma Khach Hang</td>
+    <td scope="col">Ten Khach Hang</td>
+    <td scope="col">ngay Mo So</td>
+    <td scope="col">Thoi gian bat dau</td>
+    <td scope="col">Ki Hang</td>
+    <td scope="col">So tien goi</td>
+    <td scope="col">Lai suat</td>
+    <td scope="col">Action</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let f of savingBookList let i = index ">
+    <td>{{f.id}}</td>
+    <td>{{f.customer.id}}</td>
+    <td>{{f.customer.name}}</td>
+    <td>{{f.openingDay | date: 'dd-MM-yyyy'}}</td>
+    <td>{{f.startDay | date: 'dd-MM-yyyy'}}</td>
+    <td>{{f.period}} </td>
+    <td>{{f.deposit}} USD</td>
+    <td>{{f.interestRate}} %</td>
+    <td>
+      <button type="button" class="btn btn-primary" [routerLink]="['/savingBook/edit',f.id]">
+        Edit
+      </button>
+      <button type="button" class="btn btn-danger">
+        Delete
+      </button>
+    </td>
+
+  </tr>
+  </tbody>
+
+
+</table>
