@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './savingBook/list/list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { SaveComponent } from './savingBook/save/save.component';
+import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { SaveComponent } from './savingBook/save/save.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

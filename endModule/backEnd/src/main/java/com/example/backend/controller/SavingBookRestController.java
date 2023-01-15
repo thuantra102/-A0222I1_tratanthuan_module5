@@ -1,5 +1,7 @@
 package com.example.backend.controller;
 
+import com.example.backend.dto.SavingBookDto;
+import com.example.backend.model.SavingBook;
 import com.example.backend.service.impl.CustomerService;
 import com.example.backend.service.impl.SavingBookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,4 +25,24 @@ public class SavingBookRestController {
         System.out.println(id);
         return new ResponseEntity<>(savingBookService.findById(id),HttpStatus.OK);
     }
+    @PostMapping("")
+    ResponseEntity<SavingBookDto> saveData(@RequestBody SavingBookDto savingBookDto) {
+        return  null;
+    }
+
+        @PutMapping("")
+        ResponseEntity<?> editData(@RequestBody SavingBookDto savingBookDto) {
+            System.out.println(savingBookDto);
+            savingBookService.saveFromDTO(savingBookDto);
+            return new ResponseEntity<>(HttpStatus.OK);
+
+//            return new ResponseEntity<>(savingBookService.saveFromDTO(savingBookDto), HttpStatus.OK);
+        }
+
+        @DeleteMapping("/delete/{id}")
+    public void deleteSavingBook(@PathVariable Long id) {
+            savingBookService.delete(savingBookService.findById(id));
+//        return  new ResponseEntity<>(), HttpStatus.OK);
+        }
+
 }

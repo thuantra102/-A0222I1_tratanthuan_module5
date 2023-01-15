@@ -1,4 +1,54 @@
 <p>Save</p>
-<form>
 
+<form [formGroup]="savingBookForm" (ngSubmit)="submit()" >
+  <table   class="table-primary" >
+    <tr *ngIf="check">
+      <td>List Customer</td>
+      <td>
+        <select formControlName="customerId" name="customerId">
+          <option *ngFor="let c of customerList" ngValue="{{c.id}}">
+            {{c.name}}
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>OpeningDay</td>
+      <td><input  type="date" formControlName="openingDay" name="openingDay"></td>
+    </tr>
+    <tr>
+      <td>StartDay</td>
+      <td><input type="date" formControlName="startDay" name="startDay"></td>
+
+    </tr>
+    <tr>
+      <td>Period</td>
+      <td><input type="text" formControlName="period" name="period"></td>
+    <tr>
+      <td>Deposit</td>
+      <td><input type="text"  formControlName="deposit"  name="deposit"></td>
+
+    </tr>
+    <tr>
+      <td>Reference</td>
+      <td><input type="text"  formControlName="reference"  name="reference"></td>
+
+    </tr>
+    <tr>
+      <td>InterestRate</td>
+      <td><input type="text"  formControlName="interestRate"  name="interestRate"></td>
+
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td><button class="btn btn-primary" type="submit">Save</button></td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td><button  class="btn btn-danger" routerLink="/">Cancle</button></td>
+    </tr>
+  </table>
 </form>
+

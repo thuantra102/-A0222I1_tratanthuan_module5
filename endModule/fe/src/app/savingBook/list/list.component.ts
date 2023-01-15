@@ -10,6 +10,7 @@ import {formatI18nPlaceholderName} from '@angular/compiler/src/render3/view/i18n
 })
 export class ListComponent implements OnInit {
   savingBookList: SavingBook[];
+  savingBook: SavingBook;
 
   constructor(private savingBookService: SavingBookService) {
   }
@@ -24,4 +25,14 @@ export class ListComponent implements OnInit {
     });
   }
 
+  getInfo(f: SavingBook) {
+    this.savingBook = f;
+  }
+
+  delete(id: number) {
+    this.savingBookService.delete(id).subscribe(data => {
+      console.log('delete ' + id);
+      this.ngOnInit();
+    });
+  }
 }

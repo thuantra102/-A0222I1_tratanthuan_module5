@@ -30,7 +30,7 @@ public class CustomerService implements ICrudService<Customer> {
 
     @Override
     public Customer findById(Long id) {
-        return null;
+        return customerRepository.findById(id).orElse(null);
     }
 
     @Override
